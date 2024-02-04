@@ -13,6 +13,7 @@
   "icon": "assets/chromaconcrete/ChromaConcreteIcon.png",
 
   "environment": "*",
+  "accessWidener" : "chromaconcrete.accesswidener",
   "entrypoints": {
     "main": [
       "easton.chromaconcrete.ChromaConcrete"

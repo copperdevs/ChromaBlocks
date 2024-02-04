@@ -68,6 +68,6 @@ public class ChromaConcrete implements ModInitializer {
 				return shulkerBoxBlockEntity.suffocates();
 			}
 		};
-		return new ChromaShulkerBlock(16777215, settings.pistonBehavior(PistonBehavior.DESTROY).strength(2.0F).dynamicBounds().nonOpaque().suffocates(contextPredicate).blockVision(contextPredicate));
+		return new ChromaShulkerBlock(settings.pistonBehavior(PistonBehavior.DESTROY).strength(2.0F).dynamicBounds().nonOpaque().suffocates(contextPredicate).blockVision(contextPredicate));
 	}
 }
