@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "easton.chromaconcrete.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "mixins": [
+    "BlockItemInject"
+  ],
+  "client": [
+    "ShulkerItemRenderFix"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
