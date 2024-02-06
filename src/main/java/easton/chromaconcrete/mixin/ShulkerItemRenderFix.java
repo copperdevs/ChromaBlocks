@@ -31,16 +31,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Environment(EnvType.CLIENT)
 @Mixin(BuiltinModelItemRenderer.class)
 public class ShulkerItemRenderFix {
-    /*
-    @Redirect(method = "render", at = @At(value = "CONSTANT", args = "classValue=net/minecraft/block/ShulkerBoxBlock", ordinal = 4))
-    public boolean mixin(Object block, Class<?> classValue) {
-        return (block instanceof ShulkerBoxBlock || block instanceof ChromaShulkerBlock);
-    }
-    */
 
     @Inject(method = "render", at = @At("RETURN"))
     public void chromaShulkerInject(ItemStack stack, ModelTransformationMode mode, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay, CallbackInfo ci) {
-        //BlockEntityRenderDispatcher.INSTANCE.renderEntity(new ChromaShulkerEntity(), matrices, vertexConsumers, light, stack.getOrCreateSubTag("display").contains("color") ? stack.getOrCreateSubTag("display").getInt("color") : 16777215);
         Item item = stack.getItem();
         if (item instanceof BlockItem) {
             Block block = ((BlockItem) item).getBlock();
