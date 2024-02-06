@@ -20,7 +20,7 @@ public class ClientConcrete implements ClientModInitializer {
         ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> getBlockEntityColor(view, pos), CHROMA_WOOL);
         ColorProviderRegistry.ITEM.register((stack, tintIndex) -> stack.getOrCreateSubNbt("display").contains("color") ? stack.getOrCreateSubNbt("display").getInt("color") : 16777215, CHROMA_WOOL_ITEM);
 
-        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> 12777215, CHROMA_SHULKER_ITEM);
+        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> 16777215, CHROMA_SHULKER_ITEM);
 
         BlockEntityRendererRegistry.register(SHULKER_BOX_ENTITY, ChromaShulkerRenderer::new);
         //BlockEntityRendererRegistry.INSTANCE.register(BED_ENTITY, ChromaBedRenderer::new);

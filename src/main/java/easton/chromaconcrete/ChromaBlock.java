@@ -1,8 +1,10 @@
 package easton.chromaconcrete;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.BlockWithEntity;
+import net.minecraft.block.BrewingStandBlock;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
@@ -14,6 +16,11 @@ public class ChromaBlock extends BlockWithEntity {
 
     public ChromaBlock(Settings settings) {
         super(settings);
+    }
+
+    @Override
+    protected MapCodec<? extends BlockWithEntity> getCodec() {
+        return createCodec(ChromaBlock::new);
     }
 
     @Nullable
