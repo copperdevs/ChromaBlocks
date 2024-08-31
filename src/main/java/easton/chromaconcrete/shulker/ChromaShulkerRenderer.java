@@ -41,7 +41,7 @@ public class ChromaShulkerRenderer implements BlockEntityRenderer<ChromaShulkerE
         int hue = (int) shulkerBoxBlockEntity.getRenderAttachmentData();
 
         if (hue >= 0) {
-            SpriteIdentifier spriteIdentifier2 = new SpriteIdentifier(SHULKER_BOXES_ATLAS_TEXTURE, new Identifier("entity/shulker/shulker_white"));
+            SpriteIdentifier spriteIdentifier2 = new SpriteIdentifier(SHULKER_BOXES_ATLAS_TEXTURE, Identifier.of("entity/shulker/shulker_white"));
             Color color = Color.decode(hue + "");
 
             matrixStack.push();
