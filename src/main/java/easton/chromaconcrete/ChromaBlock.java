@@ -6,8 +6,11 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.BlockWithEntity;
 import net.minecraft.block.BrewingStandBlock;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.component.DataComponentTypes;
+import net.minecraft.component.type.DyedColorComponent;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DyeColor;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
@@ -37,9 +40,9 @@ public class ChromaBlock extends BlockWithEntity {
         super.onPlaced(world, pos, state, placer, itemStack);
         BlockEntity blockEntity = world.getBlockEntity(pos);
         if (blockEntity instanceof ChromaEntity) {
-            int hue = itemStack.getOrCreateSubNbt("display").getInt("color");
+            int hue = itemStack.get(DataComponentTypes.DYED_COLOR).rgb();
             if (hue != 0) {
-                ((ChromaEntity) blockEntity).setHue(itemStack.getOrCreateSubNbt("display").getInt("color"));
+                ((ChromaEntity) blockEntity).setHue(hue);
             } else {
                 ((ChromaEntity) blockEntity).setHue(16777215);
             }

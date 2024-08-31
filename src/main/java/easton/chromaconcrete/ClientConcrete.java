@@ -23,7 +23,6 @@ public class ClientConcrete implements ClientModInitializer {
         ColorProviderRegistry.ITEM.register((stack, tintIndex) -> 16777215, CHROMA_SHULKER_ITEM);
 
         BlockEntityRendererRegistry.register(SHULKER_BOX_ENTITY, ChromaShulkerRenderer::new);
-        //BlockEntityRendererRegistry.INSTANCE.register(BED_ENTITY, ChromaBedRenderer::new);
     }
 
     private int getBlockEntityColor(BlockView view, BlockPos pos) {
